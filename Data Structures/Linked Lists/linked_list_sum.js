@@ -16,7 +16,7 @@ class Node {
 //     return sum;
 // }
 
-// Unfortunately call stack is O(n) space - adding every function call onto the stack however in the iterative code we constant amount of space
+// Unfortunately call stack is O(n) space - adding every function call onto the stack however in the iterative code we constant amount of space                     
 const linkedListSum = (head) => {
     if(head === null) return 0;
     return head.val += linkedListSum(head.next); 
