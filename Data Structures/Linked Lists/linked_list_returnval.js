@@ -15,12 +15,13 @@ class Node {
 // const findIndex = (head, index) => {
 //     let current = head; 
 //     let counter = 0; 
-//     while(index !== counter){
+//     while(current !== null){
+//          if(count === index) return current.val;
 //         current = current.next; 
 //         counter++;
 //     }
 
-//     return current.val;
+//     return null;
 
 // }
 
