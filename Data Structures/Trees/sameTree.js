@@ -6,23 +6,36 @@ class Node {
     }
 }
 
+// Recursive 
+const sameTree = (p, q) => {
+    if(!p && !q){ // if both roots are equal to null
+        return true;
+    }
+    else if(!p || !q || p.val !== q.val){
+        return false; 
+    }
 
-const sameTree = (root) => {
+    return (sameTree(p.left, q.left) && sameTree(p.right, q.right));
+}
+
+const sameTreeIterative = (p,q) => {
     
 }
 
 
 
 
-const a = new Node('a'); 
-const b = new Node('b');
-const c = new Node('c');
-const d = new Node('d');
-const e = new Node('e');
-const f = new Node('f');
+const a = new Node('1'); 
+const b = new Node('2');
+const c = new Node('3');
+const d = new Node('1');
+const e = new Node('2');
+const f = new Node('3');
 
-a.right = c; 
 a.left = b; 
-b.left = d; 
-b.right = e; 
-c.right = f;
+a.right = c; 
+d.left = e; 
+d.right = f; 
+
+// a and d are root of binary trees 
+console.log(sameTree(a, d));
