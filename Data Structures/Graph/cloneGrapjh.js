@@ -25,20 +25,52 @@ function Node(val, neighbors){
     this.neighbors = neighbors === undefined ? [] : neighbors;
 }
 
-var cloneGraph = function(Node){
-    // let neighbours = 
-    return;
-}
+var cloneGraph = function(node) {
+    if (!node) return null;
 
-// let adjList = [[2,4], [1,3], [2,4], [1,3]]
-let node1 = new Node(1); 
-let node2 = new Node(2); 
-let node3 = new Node(3); 
-let node4 = new Node(4); 
+    const visited = new Map();
 
-node1.neighbors([node2, node4]); 
-node2.neighbors([node1, node3]); 
-node3.neighbors([node2, node4]); 
-node4.neighbors([node1, node3]);
+    // Create a queue for BFS
+    const queue = [node];
 
+    // Create a clone of the given node
+    const cloneNode = new Node(node.val);
+    visited.set(node, cloneNode);
+
+    while (queue.length > 0) {
+        const currentNode = queue.shift();
+
+        for (const neighbor of currentNode.neighbors) {
+            if (!visited.has(neighbor)) {
+                // Create a clone of the neighbor and add it to the queue
+                const neighborClone = new Node(neighbor.val);
+                visited.set(neighbor, neighborClone);
+                queue.push(neighbor);
+
+                // Add the neighbor clone to the cloned node's neighbors
+                visited.get(currentNode).neighbors.push(neighborClone);
+            } else {
+                // The neighbor has already been visited, so just add it to the cloned node's neighbors
+                visited.get(currentNode).neighbors.push(visited.get(neighbor));
+            }
+        }
+    }
+
+    return cloneNode;
+};
+
+// Test the solution
+const node1 = new Node(1);
+const node2 = new Node(2);
+const node3 = new Node(3);
+const node4 = new Node(4);
+
+node1.neighbors = [node2, node4];
+node2.neighbors = [node1, node3];
+node3.neighbors = [node2, node4];
+node4.neighbors = [node1, node3];
+
+const clonedGraph = cloneGraph(node1);
+
+// Print the cloned graph (you can implement a function to display it)
 console.log(node1.neighbors);
