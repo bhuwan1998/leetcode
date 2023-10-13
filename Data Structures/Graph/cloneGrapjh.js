@@ -26,11 +26,17 @@ function Node(val, neighbors){
 }
 
 var cloneGraph = function(node) {
+    // basic check 
     if (!node) return null;
-
+    
+    // keep track of visited nodes and cloned 
+    // Also to make sure that you are not looping if the conncected 
+    // graph has overlapping neighbours 
     const visited = new Map();
 
     // Create a queue for BFS
+    // Queue to bfs neighbours and connect the cloned graph with neighbours
+    // at each 
     const queue = [node];
 
     // Create a clone of the given node
@@ -73,4 +79,4 @@ node4.neighbors = [node1, node3];
 const clonedGraph = cloneGraph(node1);
 
 // Print the cloned graph (you can implement a function to display it)
-console.log(node1.neighbors);
+console.log(cloneGraph.val);
