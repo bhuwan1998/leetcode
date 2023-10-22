@@ -5,23 +5,30 @@
  */
 
 var productExceptSelf = function(nums){
-    let i = 0; 
+   let n = nums.length;
+   let leftProducts = new Array(n); 
+   let rightProducts = new Array(n); 
+   let resultProduct = new Array(n);
 
-    let products = [];
+   var leftProduct = 1;
+   for(let i = 0; i < n; i++){
+        leftProducts[i] = leftProduct; 
+        leftProduct *= nums[i];
+   }
 
-    while(i < nums.length){
-        
-        let tempNums = nums.map((x) => x); // make a shallow copy of the array 
-        tempNums.splice(i, 1); // remove the current element from the array 
-        const inititalValue = 1; 
-        const product = tempNums.reduce((accumulator, currentValue) => accumulator * currentValue, inititalValue); // get the product of the rest of the array items 
-        // replace the current element with the product
-        console.log(product); //
-        products[i] = parseInt(product);
-        i++; 
-    }
+   var rightProduct = 1;
+   for(let i = n -1; i >= 0; i--){
+        rightProducts[i] = rightProduct;
+        rightProduct *= nums[i];
+   } 
 
-    return products; 
+   for(let i = 0; i < n; i++){
+        resultProduct[i] = parseInt(leftProducts[i] * rightProducts[i]);
+   }
+
+
+   return resultProduct;
+
 }
 
 
