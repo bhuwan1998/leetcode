@@ -79,4 +79,4 @@ node4.neighbors = [node1, node3];
 const clonedGraph = cloneGraph(node1);
 
 // Print the cloned graph (you can implement a function to display it)
-console.log(cloneGraph.val);
+console.log(clonedGraph.val, clonedGraph.neighbors);

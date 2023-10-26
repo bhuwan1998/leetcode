@@ -9,6 +9,9 @@
 # if they are not connected to the border you have to remove them 
 
 
+import numpy
+import pandas
+
 '''
  [[1, 0, 0, 0, 0, 0]
  [0, 1, 0, 1, 1, 1]
