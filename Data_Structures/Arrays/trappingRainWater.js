@@ -26,28 +26,30 @@ being trapped.
 
 var trap = function(height) {
   let left = 0;
-  let right = 1;
+  let right = height.length - 1;
   let result = 0;
-  let maxLeft = 0;
+  let maxLeft = height[left];
+  let maxRight = height[right];
 
-  while (left < right && right < height.length) {
-    if (height[left] > height[right]) {
+  while (left < right) {
+    if (maxLeft < maxRight) {
       // Calculate the trapped water
-      result += Math.max(0, Math.min(maxLeft, height[left]) - height[right]);
+      left+= 1
+      maxLeft = Math.max(maxLeft, height[left]);
+      result += Math.max(0,maxLeft - height[left]);
     } else {
       // Update the maximum height encountered so far
-      maxLeft = Math.max(maxLeft, height[right]);
+      right -= 1
+      maxRight = Math.max(maxRight, height[right]);
+      result += Math.max(0, maxRight - height[right]);
     }
-    console.log(left, right, height[left], height[right], maxLeft);
-    right += 1;
-    left += 1;
   }
 
   return result;
 };
 
-height = [0,1,0,2,1,0,1,3,2]
+height = [4, 2, 0, 3, 2, 5];
 
-console.log(trap(height))
+console.log(trap(height));  // Output should be 9
 
 
