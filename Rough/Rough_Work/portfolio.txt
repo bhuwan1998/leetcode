@@ -1,0 +1,29 @@
+<div className=" w-60 h-20 left-[251px] top-[576.33px] relative text-center text-white text-6xl font-semibold font-['Inter'] leading-10"> 
+2019
+</div>
+<div className="Line7 w-96 h-px left-[199.92px] top-[823.49px] relative border-4 border-white"></div>
+</div>
+<div className=" w-60 h-20 left-[1419px] top-[1795px] relative text-center text-white text-6xl font-semibold font-['Inter'] leading-10">
+2023
+</div>
+<div className="Januray w-96 h-20 left-[1130px] top-[2978px] relative text-center text-white text-6xl font-semibold font-['Inter'] leading-10">
+2023 Januray
+</div>
+<div className="Line6 w-64 h-px left-[1464px] top-[1877px] relative border-4 border-white"></div>
+<div className="Line10 w-64 h-px left-[1167px] top-[3078px] relative border-4 border-white"></div>
+<div className="Line8 w-96 h-px left-[298.07px] top-[1984.05px] relative border-4 border-white"></div>
+<div className="PassionForPhotography w-96 h-16 left-[500px] top-[319px] relative text-white text-5xl font-bold font-['Inter']">
+Passion for Photography
+</div>
+<img
+className="Kanchan1 w-96 h-96 left-[299px] top-[1187px] relative"
+src="https://via.placeholder.com/360x792"
+/>
+<div className="Line9 w-96 h-px left-[1009.27px] top-[550.53px] relative border border-black"></div>
+<div className="Group2 w-96 h-96 left-[620px] top-[1007px] relative">
+<div className="Ellipse1 w-96 h-96 left-0 top-0 relative bg-zinc-300 bg-opacity-0 rounded-full border-4 border-white" />
+<div className="Rectangle1 w-96 h-96 left-[191px] top-[173px] relative bg-white bg-opacity-0 border-4 border-white" />
+</div>
+{/* <div className="Issue22291 left-[951px] top-[1120px] absolute text-white text-6xl font-semibold font-['Inter'] leading-10 tracking-widest">
+ISSUE 22291
+</div> */}
