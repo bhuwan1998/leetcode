@@ -22,8 +22,6 @@ const linkedListSum = (head) => {
     return head.val += linkedListSum(head.next); 
 }
 
-
-
 let a = new Node(2); 
 let b = new Node(8); 
 let c = new Node(3); 
