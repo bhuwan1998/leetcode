@@ -8,44 +8,34 @@ function ListNode(val, next){
 */
 
 var reorderList = function(head) {
-    // fast and slow pointer 
-
-    var fast = head; 
-    var slow = head;  
-    var first = head; // when combining the lists together
-
-    while(fast && fast.next){
-        fast = fast.next.next; 
-        slow = slow.next; 
-        current = current.next;
+    if (!head || !head.next) return;
+    
+    // Step 1: Find the middle of the list using fast and slow pointers
+    let slow = head, fast = head;
+    while (fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
     }
-
-    // reverse from fast to slow pointers
-    // combine that list with first half of the list
-
-    let prev = null, curr = slow, next; 
-
-    while(fast !== null){
-        // next -> saved 
-        // current.next points to null -> in the opposite direction
-        next = curr.next; 
+    
+    // Step 2: Reverse the second half of the list
+    let prev = null, curr = slow, next;
+    while (curr) {
+        next = curr.next;
         curr.next = prev;
-        prev = curr; 
-        curr = next; // to move the linked list forward 
+        prev = curr;
+        curr = next;
     }
-
-    //fast now points to slow
-
-    let first = head, second = prev; 
-
-    while(second.next){
-        let tmp1 = first.next, tmp2 = second.next; 
-        first.next = second; 
+    
+    // Step 3: Merge the two halves
+    let first = head, second = prev;
+    while (second.next) {
+        let tmp1 = first.next, tmp2 = second.next;
+        first.next = second;
         second.next = tmp1;
-        first = tmp1; // move the pointers forward
-        second = tmp2;  // move the pointers forward
+        first = tmp1;
+        second = tmp2;
     }
-
+};
     // Helper function to print the list (for testing purposes)
 function printList(head) {
     let current = head;
@@ -64,5 +54,3 @@ printList(head);  // After reordering
     
 
 
-
-}
