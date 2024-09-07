@@ -61,6 +61,6 @@ var twoSum = function(numbers, target) {
     
 };
 
-console.log(twoSum([2,3,4], 6));
+console.log(twoSum([2,4,7], 6));
 
 
