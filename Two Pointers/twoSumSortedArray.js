@@ -49,7 +49,7 @@ var twoSum = function(numbers, target) {
     while (left < right) {
         let sum = numbers[left] + numbers[right];
         if (sum === target) {
-            return [left + 1, right + 1];
+            return [left + 1, right + 1]; // why is there a plus one here 
         } else if (sum < target) {
             left++;
         } else {
