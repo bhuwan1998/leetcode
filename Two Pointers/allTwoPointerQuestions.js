@@ -76,3 +76,23 @@ var validPalindrome = function(word){
 
 
 console.log(validPalindrome("madam"))
+
+
+// Remove Dupliates 
+// Given a sorted array 'nums' containing 'n' integers, find the first duplicate value in 
+// 'nums'. Return -1 if no such duplicate exists 
+
+/*
+
+Input; `[1,2,3,4,5,6]`
+Output: -1 
+
+If there are more than one duplicate values, return the first one
+*/
+
+
+let removeDuplicates = function(nums){
+    // create a set 
+    // add values to the set until you find a duplicate 
+    // when you find one return true and then 
+}
