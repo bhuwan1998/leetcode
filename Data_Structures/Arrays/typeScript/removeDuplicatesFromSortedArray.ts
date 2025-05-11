@@ -67,6 +67,6 @@ function removeDuplicates(arr: any[]): number {
     return insertPosition
 }
 
-const num_1 = [1,2,2,4]; 
+const num_1 = [1,2,2]; 
 
 console.log(removeDuplicates(num_1));
