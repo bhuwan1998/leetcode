@@ -35,4 +35,4 @@ var productExceptSelf = function(nums){
 let input = [1,2,3,4]; 
 let input2 = [-1,1,0,-3,3];
 
-console.log(productExceptSelf(input2));
+console.log(productExceptSelf(input));

@@ -1,4 +1,10 @@
 {
     "liveServer.settings.port": 5501,
-    "editor.codeActionsOnSave": {}
+    "editor.codeActionsOnSave": {},
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
 }
